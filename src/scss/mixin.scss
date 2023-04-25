@@ -1,0 +1,13 @@
+@use "./variable.scss" as v;
+
+@mixin bp-lg {
+  @media (min-width: map-get(v.$breakpoint,"lg")) {
+    @content;
+  }
+}
+
+@mixin bp-md {
+  @media (min-width: map-get(v.$breakpoint,"md")) and (max-width: (1109px)) {
+    @content;
+  }
+}

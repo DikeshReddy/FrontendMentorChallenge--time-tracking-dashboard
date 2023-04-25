@@ -1,0 +1,23 @@
+@use "./variable.scss" as v;
+@forward "./reset.scss";
+@forward "./Dashboard.styles.scss";
+@forward "./ProfileCard.styles.scss";
+@forward "./Card.styles.scss";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+html {
+  font-family: v.$ff;
+  font-size: v.$fs;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+body {
+  background-color: map-get(v.$neutral-colors, "neutral-0");
+  display: flex;
+}

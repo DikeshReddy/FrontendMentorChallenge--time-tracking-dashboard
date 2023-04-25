@@ -1,0 +1,50 @@
+//colors
+$card-colors: (
+  "primary-0": hsl(246, 80%, 60%),
+  // profile color
+  "primary-1": hsl(15, 100%, 70%),
+  //work card
+  "primary-2": hsl(195, 74%, 62%),
+  //play card
+  "primary-3": hsl(348, 100%, 68%),
+  //study card
+  "primary-4": hsl(145, 58%, 55%),
+  //exercise card
+  "primary-5": hsl(264, 64%, 52%),
+  //social card
+  "primary-6": hsl(43, 84%, 65%),
+  //self Care card
+);
+
+$neutral-colors: (
+  "neutral-0": hsl(226, 43%, 10%),
+  // bg color
+  "neutral-1": hsl(235, 46%, 20%),
+  // card bg color
+  "neutral-2": hsl(236, 100%, 87%),
+  //font color
+  "neutral-3": hsl(235, 45%, 61%),
+  //hover color
+  "neutral-4": hsl(0, 0%, 100%),
+  //font color
+  "neutral-5": hsl(236, 44%, 44%),
+);
+
+//fonts
+//font family
+$ff: "Rubik", sans-serif;
+
+//font weight
+$fw-small: 300;
+$fw-normal: 400;
+$fw-bold: 500;
+
+//font-size
+//body-copy
+$fs: 18px;
+
+//breakpoints
+$breakpoint: (
+  "lg": 1110px,
+  "md": 600px,
+);

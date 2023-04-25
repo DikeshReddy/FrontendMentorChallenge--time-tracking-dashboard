@@ -1,0 +1,86 @@
+@use "./variable.scss" as v;
+@use "./mixin.scss" as *;
+.profile-card {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: clamp(320px, 80vw, 500px);
+  background-color: map-get(v.$neutral-colors, "neutral-1");
+  @include bp-lg {
+    width: 255px;
+    grid-row: span 2;
+    justify-content: flex-start;
+  }
+  @include bp-md {
+    width: 100%;
+    grid-column: span 2;
+  }
+
+  &__user {
+    background-color: map-get(v.$card-colors, "primary-0");
+    border-radius: 15px;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+    padding: 29px;
+    width: 100%;
+    height: 70%;
+    @include bp-lg {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    &__image {
+      height: 70px;
+      width: 70px;
+      border: 3px solid white;
+      border-radius: 50px;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      color: map-get($map: v.$neutral-colors, $key: "neutral-2");
+      font-size: 0.75rem;
+
+      .name {
+        font-size: 1.25rem;
+        font-weight: v.$fw-normal;
+        color: map-get($map: v.$neutral-colors, $key: "neutral-4");
+        @include bp-lg {
+          font-size: 2rem;
+          font-weight: v.$fw-small;
+        }
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    padding: 1.3rem 2rem;
+    width: 100%;
+    justify-content: space-between;
+    flex-grow: 1;
+    @include bp-lg {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    button {
+      background: none;
+      color: map-get(v.$neutral-colors, "neutral-2");
+      border: none;
+      padding: 0;
+      font: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+      outline: inherit;
+    }
+  }
+  .clicked {
+    color: map-get(v.$neutral-colors, "neutral-4");
+    font-weight: v.$fw-bold;
+  }
+  button:hover {
+    color: map-get(v.$neutral-colors, "neutral-4");
+  }
+}

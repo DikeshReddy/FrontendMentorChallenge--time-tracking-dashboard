@@ -1,0 +1,65 @@
+@use "./variable.scss" as v;
+@use "./mixin.scss" as *;
+
+.card {
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  .icon {
+    position: absolute;
+    top: 0;
+    right: 10%;
+  }
+  &__content {
+    border-radius: 15px;
+    padding: 32px 26px;
+    margin-top: 15%;
+    background-color: map-get(v.$neutral-colors, "neutral-1");
+    position: relative;
+    z-index: 3;
+    &:hover {
+      background-color: map-get(v.$neutral-colors, "neutral-5");
+    }
+    &__heading {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      &__title {
+        font-weight: v.$fw-bold;
+        color: map-get(v.$neutral-colors, "neutral-4");
+      }
+      .ellipsis {
+        object-fit: contain;
+      }
+      .ellipsis:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &__hours {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include bp-lg {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    &__current {
+      font-size: 2rem;
+      font-weight: v.$fw-small;
+      color: map-get(v.$neutral-colors, "neutral-4");
+    }
+    &__previous {
+      color: map-get(v.$neutral-colors, "neutral-3");
+      font-size: 0.75rem;
+    }
+  }
+}
+
+@each $key, $val in v.$card-colors {
+  .card-bg-#{$key} {
+    background-color: $val;
+  }
+}

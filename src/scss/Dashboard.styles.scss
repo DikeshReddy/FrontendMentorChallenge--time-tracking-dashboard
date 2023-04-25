@@ -1,0 +1,14 @@
+@use "./mixin.scss" as *;
+
+.Dashboard {
+  width: clamp(375px, 80%, 1110px);
+  display: grid;
+  gap: 24px;
+  justify-content: center;
+  @include bp-lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include bp-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
